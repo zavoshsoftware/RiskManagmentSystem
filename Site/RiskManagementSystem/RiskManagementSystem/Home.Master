@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="RiskManagementSystem.Home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Css/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="topDiv">
+    <div id="top">
+    <div id="rightTopDiv">
+ <img src="../Images/gaslogo.png" /></div>
+      
+  <div id="ToptitleDiv">    سیستم ارزیابی ریسک</div>
+    
+    <div id="leftTopDiv">
+        
+   </div>
+    <p class="clear"></p></div>
+    </div>
+    <div id="contentDiv">
+    <div id="outerDiv">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div></div>
+    <div id="footerDiv">
+    <p>
+     <center>
+     این سیستم با حمایت شرکت مهندسی و توسعه گاز ایران و به همت دانشگاه سلامت ، ایمنی و 
+     محسط زیست دانشگاه شهید بهشتی تهیه گردیده است
+     <br />
+
+    تمامی حقوق این سیستم متعلق به شرکت مهندسی و توسعه گاز ایران می باشد.
+    <br />
+    Powered By <a href="mailto:babaei.aho@gmail.com">Babaei</a>
+    
+    </center>
+    </p>
+    
+    </div>
+    </form>
+</body>
+</html>

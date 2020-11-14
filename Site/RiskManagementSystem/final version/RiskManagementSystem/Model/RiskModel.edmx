@@ -1,0 +1,1412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RiskManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RiskManagementModelStoreContainer">
+          <EntitySet Name="Acts" EntityType="RiskManagementModel.Store.Acts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ControlingWorks" EntityType="RiskManagementModel.Store.ControlingWorks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FileGroups" EntityType="RiskManagementModel.Store.FileGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Files" EntityType="RiskManagementModel.Store.Files" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OperationGroups" EntityType="RiskManagementModel.Store.OperationGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Operations" EntityType="RiskManagementModel.Store.Operations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RiskDesicions" EntityType="RiskManagementModel.Store.RiskDesicions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RiskEvaluations" EntityType="RiskManagementModel.Store.RiskEvaluations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RiskIntensities" EntityType="RiskManagementModel.Store.RiskIntensities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RiskProbabilities" EntityType="RiskManagementModel.Store.RiskProbabilities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Risks" EntityType="RiskManagementModel.Store.Risks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="RiskManagementModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stages" EntityType="RiskManagementModel.Store.Stages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRisks" EntityType="RiskManagementModel.Store.UserRisks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="RiskManagementModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Acts_Operations" Association="RiskManagementModel.Store.FK_Acts_Operations">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Acts" EntitySet="Acts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ControlingWorks_Risks" Association="RiskManagementModel.Store.FK_ControlingWorks_Risks">
+            <End Role="Risks" EntitySet="Risks" />
+            <End Role="ControlingWorks" EntitySet="ControlingWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Files_FileGroups" Association="RiskManagementModel.Store.FK_Files_FileGroups">
+            <End Role="FileGroups" EntitySet="FileGroups" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operations_OperationGroups" Association="RiskManagementModel.Store.FK_Operations_OperationGroups">
+            <End Role="OperationGroups" EntitySet="OperationGroups" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskDesicion_RiskEvaluations" Association="RiskManagementModel.Store.FK_RiskDesicion_RiskEvaluations">
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+            <End Role="RiskDesicions" EntitySet="RiskDesicions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskDesicion_RiskEvaluations1" Association="RiskManagementModel.Store.FK_RiskDesicion_RiskEvaluations1">
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+            <End Role="RiskDesicions" EntitySet="RiskDesicions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskEvaluations_RiskIntensities" Association="RiskManagementModel.Store.FK_RiskEvaluations_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskEvaluations_RiskProbabilities" Association="RiskManagementModel.Store.FK_RiskEvaluations_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_RiskIntensities" Association="RiskManagementModel.Store.FK_Risks_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_RiskProbabilities" Association="RiskManagementModel.Store.FK_Risks_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_Stages" Association="RiskManagementModel.Store.FK_Risks_Stages">
+            <End Role="Stages" EntitySet="Stages" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stages_Acts" Association="RiskManagementModel.Store.FK_Stages_Acts">
+            <End Role="Acts" EntitySet="Acts" />
+            <End Role="Stages" EntitySet="Stages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskIntensities" Association="RiskManagementModel.Store.FK_UserRisks_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskIntensities1" Association="RiskManagementModel.Store.FK_UserRisks_RiskIntensities1">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskProbabilities" Association="RiskManagementModel.Store.FK_UserRisks_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskProbabilities1" Association="RiskManagementModel.Store.FK_UserRisks_RiskProbabilities1">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Risks" Association="RiskManagementModel.Store.FK_UserRisks_Risks">
+            <End Role="Risks" EntitySet="Risks" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Users" Association="RiskManagementModel.Store.FK_UserRisks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Users1" Association="RiskManagementModel.Store.FK_UserRisks_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Roles" Association="RiskManagementModel.Store.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Users" Association="RiskManagementModel.Store.FK_Users_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Users1" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Acts">
+          <Key>
+            <PropertyRef Name="ActID" />
+          </Key>
+          <Property Name="ActID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OperationID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="ActTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ProtectionEQP" Type="ntext" />
+          <Property Name="Curses" Type="ntext" />
+          <Property Name="IsAcceptedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="ControlingWorks">
+          <Key>
+            <PropertyRef Name="ControlID" />
+          </Key>
+          <Property Name="ControlID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RiskID" Type="int" Nullable="false" />
+          <Property Name="ControlTitle" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="IsAcceptedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="FileGroups">
+          <Key>
+            <PropertyRef Name="FileGroupID" />
+          </Key>
+          <Property Name="FileGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileGroupTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileGroupID" Type="int" Nullable="false" />
+          <Property Name="CHName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GUName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RGName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OperationGroups">
+          <Key>
+            <PropertyRef Name="OperationGroupID" />
+          </Key>
+          <Property Name="OperationGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OperationGroupTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="OperationGroupName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Operations">
+          <Key>
+            <PropertyRef Name="OperationID" />
+          </Key>
+          <Property Name="OperationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OperationGroupID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="OperationTitle" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsAcceptedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="RiskDesicions">
+          <Key>
+            <PropertyRef Name="RiskDesicionID" />
+          </Key>
+          <Property Name="RiskDesicionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StartRiskEvaluationID" Type="int" Nullable="false" />
+          <Property Name="EndRiskEvaluationID" Type="int" Nullable="false" />
+          <Property Name="RiskDesicionTitle" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="RiskEvaluations">
+          <Key>
+            <PropertyRef Name="RiskEvaluationID" />
+          </Key>
+          <Property Name="RiskEvaluationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RiskIntensityID" Type="int" Nullable="false" />
+          <Property Name="RiskProbabilityID" Type="int" Nullable="false" />
+          <Property Name="RiskEvaluationNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RiskIntensities">
+          <Key>
+            <PropertyRef Name="RiskIntensityID" />
+          </Key>
+          <Property Name="RiskIntensityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RiskIntensityTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RiskIntensityLevel" Type="int" Nullable="false" />
+          <Property Name="RiskIntensityDef" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="RiskProbabilities">
+          <Key>
+            <PropertyRef Name="RiskProbabilityID" />
+          </Key>
+          <Property Name="RiskProbabilityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RiskProbabilityTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RiskProbabilityLevel" Type="int" Nullable="false" />
+          <Property Name="RiskProbabilityDes" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="RiskProbabilitySpeed" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Risks">
+          <Key>
+            <PropertyRef Name="RiskID" />
+          </Key>
+          <Property Name="RiskID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StageID" Type="int" Nullable="false" />
+          <Property Name="RiskTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="IsNormal" Type="bit" Nullable="false" />
+          <Property Name="RiskIntensityID" Type="int" />
+          <Property Name="RiskProbabilityID" Type="int" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="IsAcceptedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Stages">
+          <Key>
+            <PropertyRef Name="StageID" />
+          </Key>
+          <Property Name="StageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="StageTitle" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="IsAcceptedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserRisks">
+          <Key>
+            <PropertyRef Name="UserRiskID" />
+          </Key>
+          <Property Name="UserRiskID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID_Company" Type="int" Nullable="false" />
+          <Property Name="RiskID" Type="int" Nullable="false" />
+          <Property Name="RiskIntensityID" Type="int" Nullable="false" />
+          <Property Name="RiskProbabilityID" Type="int" Nullable="false" />
+          <Property Name="RiskIntensityID_AfterCO" Type="int" />
+          <Property Name="RiskProbabilityID_AfterCO" Type="int" />
+          <Property Name="IsCheckBySup" Type="bit" />
+          <Property Name="IsCheckByAdmin" Type="bit" />
+          <Property Name="UserID_Sup" Type="int" />
+          <Property Name="IsNotAvailable" Type="bit" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Family" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar" MaxLength="2500" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyProjectName" Type="ntext" />
+          <Property Name="CompanyPosition" Type="ntext" />
+          <Property Name="fk_CompanyUserID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Acts_Operations">
+          <End Role="Operations" Type="RiskManagementModel.Store.Operations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Acts" Type="RiskManagementModel.Store.Acts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="OperationID" />
+            </Principal>
+            <Dependent Role="Acts">
+              <PropertyRef Name="OperationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ControlingWorks_Risks">
+          <End Role="Risks" Type="RiskManagementModel.Store.Risks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ControlingWorks" Type="RiskManagementModel.Store.ControlingWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Risks">
+              <PropertyRef Name="RiskID" />
+            </Principal>
+            <Dependent Role="ControlingWorks">
+              <PropertyRef Name="RiskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Files_FileGroups">
+          <End Role="FileGroups" Type="RiskManagementModel.Store.FileGroups" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Files" Type="RiskManagementModel.Store.Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FileGroups">
+              <PropertyRef Name="FileGroupID" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="FileGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operations_OperationGroups">
+          <End Role="OperationGroups" Type="RiskManagementModel.Store.OperationGroups" Multiplicity="1" />
+          <End Role="Operations" Type="RiskManagementModel.Store.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationGroups">
+              <PropertyRef Name="OperationGroupID" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="OperationGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskDesicion_RiskEvaluations">
+          <End Role="RiskEvaluations" Type="RiskManagementModel.Store.RiskEvaluations" Multiplicity="1" />
+          <End Role="RiskDesicions" Type="RiskManagementModel.Store.RiskDesicions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskEvaluations">
+              <PropertyRef Name="RiskEvaluationID" />
+            </Principal>
+            <Dependent Role="RiskDesicions">
+              <PropertyRef Name="StartRiskEvaluationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskDesicion_RiskEvaluations1">
+          <End Role="RiskEvaluations" Type="RiskManagementModel.Store.RiskEvaluations" Multiplicity="1" />
+          <End Role="RiskDesicions" Type="RiskManagementModel.Store.RiskDesicions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskEvaluations">
+              <PropertyRef Name="RiskEvaluationID" />
+            </Principal>
+            <Dependent Role="RiskDesicions">
+              <PropertyRef Name="EndRiskEvaluationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskEvaluations_RiskIntensities">
+          <End Role="RiskIntensities" Type="RiskManagementModel.Store.RiskIntensities" Multiplicity="1" />
+          <End Role="RiskEvaluations" Type="RiskManagementModel.Store.RiskEvaluations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="RiskEvaluations">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskEvaluations_RiskProbabilities">
+          <End Role="RiskProbabilities" Type="RiskManagementModel.Store.RiskProbabilities" Multiplicity="1" />
+          <End Role="RiskEvaluations" Type="RiskManagementModel.Store.RiskEvaluations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="RiskEvaluations">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_RiskIntensities">
+          <End Role="RiskIntensities" Type="RiskManagementModel.Store.RiskIntensities" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Risks" Type="RiskManagementModel.Store.Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_RiskProbabilities">
+          <End Role="RiskProbabilities" Type="RiskManagementModel.Store.RiskProbabilities" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Risks" Type="RiskManagementModel.Store.Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_Stages">
+          <End Role="Stages" Type="RiskManagementModel.Store.Stages" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Risks" Type="RiskManagementModel.Store.Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stages">
+              <PropertyRef Name="StageID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="StageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stages_Acts">
+          <End Role="Acts" Type="RiskManagementModel.Store.Acts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Stages" Type="RiskManagementModel.Store.Stages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Acts">
+              <PropertyRef Name="ActID" />
+            </Principal>
+            <Dependent Role="Stages">
+              <PropertyRef Name="ActID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskIntensities">
+          <End Role="RiskIntensities" Type="RiskManagementModel.Store.RiskIntensities" Multiplicity="1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskIntensities1">
+          <End Role="RiskIntensities" Type="RiskManagementModel.Store.RiskIntensities" Multiplicity="0..1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskIntensityID_AfterCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskProbabilities">
+          <End Role="RiskProbabilities" Type="RiskManagementModel.Store.RiskProbabilities" Multiplicity="1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskProbabilities1">
+          <End Role="RiskProbabilities" Type="RiskManagementModel.Store.RiskProbabilities" Multiplicity="0..1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskProbabilityID_AfterCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Risks">
+          <End Role="Risks" Type="RiskManagementModel.Store.Risks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Risks">
+              <PropertyRef Name="RiskID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Users">
+          <End Role="Users" Type="RiskManagementModel.Store.Users" Multiplicity="1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="UserID_Company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Users1">
+          <End Role="Users" Type="RiskManagementModel.Store.Users" Multiplicity="0..1" />
+          <End Role="UserRisks" Type="RiskManagementModel.Store.UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="UserID_Sup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="RiskManagementModel.Store.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Users" Type="RiskManagementModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Users">
+          <End Role="Users" Type="RiskManagementModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Users1" Type="RiskManagementModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Users1">
+              <PropertyRef Name="fk_CompanyUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RiskManagementModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RiskManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Acts" EntityType="RiskManagementModel.Acts" />
+          <EntitySet Name="ControlingWorks" EntityType="RiskManagementModel.ControlingWorks" />
+          <EntitySet Name="OperationGroups" EntityType="RiskManagementModel.OperationGroups" />
+          <EntitySet Name="Operations" EntityType="RiskManagementModel.Operations" />
+          <EntitySet Name="RiskDesicions" EntityType="RiskManagementModel.RiskDesicions" />
+          <EntitySet Name="RiskEvaluations" EntityType="RiskManagementModel.RiskEvaluations" />
+          <EntitySet Name="RiskIntensities" EntityType="RiskManagementModel.RiskIntensities" />
+          <EntitySet Name="RiskProbabilities" EntityType="RiskManagementModel.RiskProbabilities" />
+          <AssociationSet Name="FK_Acts_Operations" Association="RiskManagementModel.FK_Acts_Operations">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Acts" EntitySet="Acts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operations_OperationGroups" Association="RiskManagementModel.FK_Operations_OperationGroups">
+            <End Role="OperationGroups" EntitySet="OperationGroups" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskDesicion_RiskEvaluations" Association="RiskManagementModel.FK_RiskDesicion_RiskEvaluations">
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+            <End Role="RiskDesicions" EntitySet="RiskDesicions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskDesicion_RiskEvaluations1" Association="RiskManagementModel.FK_RiskDesicion_RiskEvaluations1">
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+            <End Role="RiskDesicions" EntitySet="RiskDesicions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskEvaluations_RiskIntensities" Association="RiskManagementModel.FK_RiskEvaluations_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RiskEvaluations_RiskProbabilities" Association="RiskManagementModel.FK_RiskEvaluations_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="RiskEvaluations" EntitySet="RiskEvaluations" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="RiskManagementModel.Roles" />
+          <EntitySet Name="Risks" EntityType="RiskManagementModel.Risks" />
+          <AssociationSet Name="FK_ControlingWorks_Risks" Association="RiskManagementModel.FK_ControlingWorks_Risks">
+            <End Role="Risks" EntitySet="Risks" />
+            <End Role="ControlingWorks" EntitySet="ControlingWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_RiskIntensities" Association="RiskManagementModel.FK_Risks_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_RiskProbabilities" Association="RiskManagementModel.FK_Risks_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <EntitySet Name="FileGroups" EntityType="RiskManagementModel.FileGroups" />
+          <EntitySet Name="Files" EntityType="RiskManagementModel.Files" />
+          <AssociationSet Name="FK_Files_FileGroups" Association="RiskManagementModel.FK_Files_FileGroups">
+            <End Role="FileGroups" EntitySet="FileGroups" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <EntitySet Name="Stages" EntityType="RiskManagementModel.Stages" />
+          <AssociationSet Name="FK_Stages_Acts" Association="RiskManagementModel.FK_Stages_Acts">
+            <End Role="Acts" EntitySet="Acts" />
+            <End Role="Stages" EntitySet="Stages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Risks_Stages" Association="RiskManagementModel.FK_Risks_Stages">
+            <End Role="Stages" EntitySet="Stages" />
+            <End Role="Risks" EntitySet="Risks" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="RiskManagementModel.Users" />
+          <AssociationSet Name="FK_Users_Roles" Association="RiskManagementModel.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Users" Association="RiskManagementModel.FK_Users_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Users1" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="UserRisks" EntityType="RiskManagementModel.UserRisks" />
+          <AssociationSet Name="FK_UserRisks_RiskIntensities" Association="RiskManagementModel.FK_UserRisks_RiskIntensities">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskIntensities1" Association="RiskManagementModel.FK_UserRisks_RiskIntensities1">
+            <End Role="RiskIntensities" EntitySet="RiskIntensities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskProbabilities" Association="RiskManagementModel.FK_UserRisks_RiskProbabilities">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_RiskProbabilities1" Association="RiskManagementModel.FK_UserRisks_RiskProbabilities1">
+            <End Role="RiskProbabilities" EntitySet="RiskProbabilities" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Risks" Association="RiskManagementModel.FK_UserRisks_Risks">
+            <End Role="Risks" EntitySet="Risks" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Users" Association="RiskManagementModel.FK_UserRisks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRisks_Users1" Association="RiskManagementModel.FK_UserRisks_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRisks" EntitySet="UserRisks" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Acts">
+          <Key>
+            <PropertyRef Name="ActID" />
+          </Key>
+          <Property Name="ActID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OperationID" Type="Int32" Nullable="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="ActTitle" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ProtectionEQP" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Curses" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Operations" Relationship="RiskManagementModel.FK_Acts_Operations" FromRole="Acts" ToRole="Operations" />
+          <Property Type="Boolean" Name="IsAcceptedByAdmin" />
+          <NavigationProperty Name="Stages" Relationship="RiskManagementModel.FK_Stages_Acts" FromRole="Acts" ToRole="Stages" />
+        </EntityType>
+        <EntityType Name="ControlingWorks">
+          <Key>
+            <PropertyRef Name="ControlID" />
+          </Key>
+          <Property Name="ControlID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RiskID" Type="Int32" Nullable="false" />
+          <Property Name="ControlTitle" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Risks" Relationship="RiskManagementModel.FK_ControlingWorks_Risks" FromRole="ControlingWorks" ToRole="Risks" />
+          <Property Type="Boolean" Name="IsAcceptedByAdmin" />
+        </EntityType>
+        <EntityType Name="OperationGroups">
+          <Key>
+            <PropertyRef Name="OperationGroupID" />
+          </Key>
+          <Property Name="OperationGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OperationGroupTitle" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Operations" Relationship="RiskManagementModel.FK_Operations_OperationGroups" FromRole="OperationGroups" ToRole="Operations" />
+          <Property Type="String" Name="OperationGroupName" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Operations">
+          <Key>
+            <PropertyRef Name="OperationID" />
+          </Key>
+          <Property Name="OperationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OperationGroupID" Type="Int32" Nullable="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="OperationTitle" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Acts" Relationship="RiskManagementModel.FK_Acts_Operations" FromRole="Operations" ToRole="Acts" />
+          <NavigationProperty Name="OperationGroups" Relationship="RiskManagementModel.FK_Operations_OperationGroups" FromRole="Operations" ToRole="OperationGroups" />
+          <Property Type="Boolean" Name="IsAcceptedByAdmin" />
+        </EntityType>
+        <EntityType Name="RiskDesicions">
+          <Key>
+            <PropertyRef Name="RiskDesicionID" />
+          </Key>
+          <Property Name="RiskDesicionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartRiskEvaluationID" Type="Int32" Nullable="false" />
+          <Property Name="EndRiskEvaluationID" Type="Int32" Nullable="false" />
+          <Property Name="RiskDesicionTitle" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RiskEvaluations" Relationship="RiskManagementModel.FK_RiskDesicion_RiskEvaluations" FromRole="RiskDesicions" ToRole="RiskEvaluations" />
+          <NavigationProperty Name="RiskEvaluations1" Relationship="RiskManagementModel.FK_RiskDesicion_RiskEvaluations1" FromRole="RiskDesicions" ToRole="RiskEvaluations" />
+        </EntityType>
+        <EntityType Name="RiskEvaluations">
+          <Key>
+            <PropertyRef Name="RiskEvaluationID" />
+          </Key>
+          <Property Name="RiskEvaluationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RiskIntensityID" Type="Int32" Nullable="false" />
+          <Property Name="RiskProbabilityID" Type="Int32" Nullable="false" />
+          <Property Name="RiskEvaluationNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RiskDesicions" Relationship="RiskManagementModel.FK_RiskDesicion_RiskEvaluations" FromRole="RiskEvaluations" ToRole="RiskDesicions" />
+          <NavigationProperty Name="RiskDesicions1" Relationship="RiskManagementModel.FK_RiskDesicion_RiskEvaluations1" FromRole="RiskEvaluations" ToRole="RiskDesicions" />
+          <NavigationProperty Name="RiskIntensities" Relationship="RiskManagementModel.FK_RiskEvaluations_RiskIntensities" FromRole="RiskEvaluations" ToRole="RiskIntensities" />
+          <NavigationProperty Name="RiskProbabilities" Relationship="RiskManagementModel.FK_RiskEvaluations_RiskProbabilities" FromRole="RiskEvaluations" ToRole="RiskProbabilities" />
+        </EntityType>
+        <EntityType Name="RiskIntensities">
+          <Key>
+            <PropertyRef Name="RiskIntensityID" />
+          </Key>
+          <Property Name="RiskIntensityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RiskIntensityTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RiskIntensityLevel" Type="Int32" Nullable="false" />
+          <Property Name="RiskIntensityDef" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RiskEvaluations" Relationship="RiskManagementModel.FK_RiskEvaluations_RiskIntensities" FromRole="RiskIntensities" ToRole="RiskEvaluations" />
+          <NavigationProperty Name="Risks" Relationship="RiskManagementModel.FK_Risks_RiskIntensities" FromRole="RiskIntensities" ToRole="Risks" />
+          <NavigationProperty Name="UserRisks" Relationship="RiskManagementModel.FK_UserRisks_RiskIntensities" FromRole="RiskIntensities" ToRole="UserRisks" />
+          <NavigationProperty Name="UserRisks1" Relationship="RiskManagementModel.FK_UserRisks_RiskIntensities1" FromRole="RiskIntensities" ToRole="UserRisks" />
+          </EntityType>
+        <EntityType Name="RiskProbabilities">
+          <Key>
+            <PropertyRef Name="RiskProbabilityID" />
+          </Key>
+          <Property Name="RiskProbabilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RiskProbabilityTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RiskProbabilityLevel" Type="Int32" Nullable="false" />
+          <Property Name="RiskProbabilityDes" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="RiskProbabilitySpeed" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RiskEvaluations" Relationship="RiskManagementModel.FK_RiskEvaluations_RiskProbabilities" FromRole="RiskProbabilities" ToRole="RiskEvaluations" />
+          <NavigationProperty Name="Risks" Relationship="RiskManagementModel.FK_Risks_RiskProbabilities" FromRole="RiskProbabilities" ToRole="Risks" />
+          <NavigationProperty Name="UserRisks" Relationship="RiskManagementModel.FK_UserRisks_RiskProbabilities" FromRole="RiskProbabilities" ToRole="UserRisks" />
+          <NavigationProperty Name="UserRisks1" Relationship="RiskManagementModel.FK_UserRisks_RiskProbabilities1" FromRole="RiskProbabilities" ToRole="UserRisks" />
+          </EntityType>
+        <Association Name="FK_Acts_Operations">
+          <End Role="Operations" Type="RiskManagementModel.Operations" Multiplicity="1" />
+          <End Role="Acts" Type="RiskManagementModel.Acts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="OperationID" />
+            </Principal>
+            <Dependent Role="Acts">
+              <PropertyRef Name="OperationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operations_OperationGroups">
+          <End Role="OperationGroups" Type="RiskManagementModel.OperationGroups" Multiplicity="1" />
+          <End Role="Operations" Type="RiskManagementModel.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationGroups">
+              <PropertyRef Name="OperationGroupID" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="OperationGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskDesicion_RiskEvaluations">
+          <End Role="RiskEvaluations" Type="RiskManagementModel.RiskEvaluations" Multiplicity="1" />
+          <End Role="RiskDesicions" Type="RiskManagementModel.RiskDesicions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskEvaluations">
+              <PropertyRef Name="RiskEvaluationID" />
+            </Principal>
+            <Dependent Role="RiskDesicions">
+              <PropertyRef Name="StartRiskEvaluationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskDesicion_RiskEvaluations1">
+          <End Role="RiskEvaluations" Type="RiskManagementModel.RiskEvaluations" Multiplicity="1" />
+          <End Role="RiskDesicions" Type="RiskManagementModel.RiskDesicions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskEvaluations">
+              <PropertyRef Name="RiskEvaluationID" />
+            </Principal>
+            <Dependent Role="RiskDesicions">
+              <PropertyRef Name="EndRiskEvaluationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskEvaluations_RiskIntensities">
+          <End Role="RiskIntensities" Type="RiskManagementModel.RiskIntensities" Multiplicity="1" />
+          <End Role="RiskEvaluations" Type="RiskManagementModel.RiskEvaluations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="RiskEvaluations">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RiskEvaluations_RiskProbabilities">
+          <End Role="RiskProbabilities" Type="RiskManagementModel.RiskProbabilities" Multiplicity="1" />
+          <End Role="RiskEvaluations" Type="RiskManagementModel.RiskEvaluations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="RiskEvaluations">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="RiskManagementModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Risks">
+          <Key>
+            <PropertyRef Name="RiskID" />
+          </Key>
+          <Property Type="Int32" Name="RiskID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StageID" Nullable="false" />
+          <Property Type="String" Name="RiskTitle" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsNormal" Nullable="false" />
+          <Property Type="Int32" Name="RiskIntensityID" />
+          <Property Type="Int32" Name="RiskProbabilityID" />
+          <Property Type="Int32" Name="CodeID" Nullable="false" />
+          <NavigationProperty Name="ControlingWorks" Relationship="RiskManagementModel.FK_ControlingWorks_Risks" FromRole="Risks" ToRole="ControlingWorks" />
+          <NavigationProperty Name="RiskIntensities" Relationship="RiskManagementModel.FK_Risks_RiskIntensities" FromRole="Risks" ToRole="RiskIntensities" />
+          <NavigationProperty Name="RiskProbabilities" Relationship="RiskManagementModel.FK_Risks_RiskProbabilities" FromRole="Risks" ToRole="RiskProbabilities" />
+          <Property Type="Boolean" Name="IsAcceptedByAdmin" />
+          <NavigationProperty Name="Stages" Relationship="RiskManagementModel.FK_Risks_Stages" FromRole="Risks" ToRole="Stages" />
+          <NavigationProperty Name="UserRisks" Relationship="RiskManagementModel.FK_UserRisks_Risks" FromRole="Risks" ToRole="UserRisks" />
+        </EntityType>
+        <Association Name="FK_ControlingWorks_Risks">
+          <End Type="RiskManagementModel.Risks" Role="Risks" Multiplicity="1" />
+          <End Type="RiskManagementModel.ControlingWorks" Role="ControlingWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Risks">
+              <PropertyRef Name="RiskID" />
+            </Principal>
+            <Dependent Role="ControlingWorks">
+              <PropertyRef Name="RiskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_RiskIntensities">
+          <End Type="RiskManagementModel.RiskIntensities" Role="RiskIntensities" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.Risks" Role="Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_RiskProbabilities">
+          <End Type="RiskManagementModel.RiskProbabilities" Role="RiskProbabilities" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.Risks" Role="Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FileGroups">
+          <Key>
+            <PropertyRef Name="FileGroupID" />
+          </Key>
+          <Property Type="Int32" Name="FileGroupID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FileGroupTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Files" Relationship="RiskManagementModel.FK_Files_FileGroups" FromRole="FileGroups" ToRole="Files" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Type="Int32" Name="FileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FileGroupID" Nullable="false" />
+          <Property Type="String" Name="CHName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GUName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RGName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FileGroups" Relationship="RiskManagementModel.FK_Files_FileGroups" FromRole="Files" ToRole="FileGroups" />
+        </EntityType>
+        <Association Name="FK_Files_FileGroups">
+          <End Type="RiskManagementModel.FileGroups" Role="FileGroups" Multiplicity="1" />
+          <End Type="RiskManagementModel.Files" Role="Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FileGroups">
+              <PropertyRef Name="FileGroupID" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="FileGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Stages">
+          <Key>
+            <PropertyRef Name="StageID" />
+          </Key>
+          <Property Type="Int32" Name="StageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ActID" Nullable="false" />
+          <Property Type="Int32" Name="CodeID" Nullable="false" />
+          <Property Type="String" Name="StageTitle" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAcceptedByAdmin" />
+          <NavigationProperty Name="Acts" Relationship="RiskManagementModel.FK_Stages_Acts" FromRole="Stages" ToRole="Acts" />
+          <NavigationProperty Name="Risks" Relationship="RiskManagementModel.FK_Risks_Stages" FromRole="Stages" ToRole="Risks" />
+        </EntityType>
+        <Association Name="FK_Stages_Acts">
+          <End Type="RiskManagementModel.Acts" Role="Acts" Multiplicity="1" />
+          <End Type="RiskManagementModel.Stages" Role="Stages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Acts">
+              <PropertyRef Name="ActID" />
+            </Principal>
+            <Dependent Role="Stages">
+              <PropertyRef Name="ActID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Risks_Stages">
+          <End Type="RiskManagementModel.Stages" Role="Stages" Multiplicity="1" />
+          <End Type="RiskManagementModel.Risks" Role="Risks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stages">
+              <PropertyRef Name="StageID" />
+            </Principal>
+            <Dependent Role="Risks">
+              <PropertyRef Name="StageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Family" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyProjectName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyPosition" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="fk_CompanyUserID" />
+          <NavigationProperty Name="Roles" Relationship="RiskManagementModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="Users1" Relationship="RiskManagementModel.FK_Users_Users" FromRole="Users" ToRole="Users1" />
+          <NavigationProperty Name="Users2" Relationship="RiskManagementModel.FK_Users_Users" FromRole="Users1" ToRole="Users" />
+          <NavigationProperty Name="UserRisks" Relationship="RiskManagementModel.FK_UserRisks_Users" FromRole="Users" ToRole="UserRisks" />
+          <NavigationProperty Name="UserRisks1" Relationship="RiskManagementModel.FK_UserRisks_Users1" FromRole="Users" ToRole="UserRisks" />
+        </EntityType>
+        <Association Name="FK_Users_Roles">
+          <End Type="RiskManagementModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="RiskManagementModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Users">
+          <End Type="RiskManagementModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.Users" Role="Users1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Users1">
+              <PropertyRef Name="fk_CompanyUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserRisks">
+          <Key>
+            <PropertyRef Name="UserRiskID" />
+          </Key>
+          <Property Type="Int32" Name="UserRiskID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID_Company" Nullable="false" />
+          <Property Type="Int32" Name="RiskID" Nullable="false" />
+          <Property Type="Int32" Name="RiskIntensityID" Nullable="false" />
+          <Property Type="Int32" Name="RiskProbabilityID" Nullable="false" />
+          <Property Type="Int32" Name="RiskIntensityID_AfterCO" />
+          <Property Type="Int32" Name="RiskProbabilityID_AfterCO" />
+          <Property Type="Boolean" Name="IsCheckBySup" />
+          <Property Type="Boolean" Name="IsCheckByAdmin" />
+          <Property Type="Int32" Name="UserID_Sup" />
+          <Property Type="Boolean" Name="IsNotAvailable" />
+          <NavigationProperty Name="RiskIntensities" Relationship="RiskManagementModel.FK_UserRisks_RiskIntensities" FromRole="UserRisks" ToRole="RiskIntensities" />
+          <NavigationProperty Name="RiskIntensities1" Relationship="RiskManagementModel.FK_UserRisks_RiskIntensities1" FromRole="UserRisks" ToRole="RiskIntensities" />
+          <NavigationProperty Name="RiskProbabilities" Relationship="RiskManagementModel.FK_UserRisks_RiskProbabilities" FromRole="UserRisks" ToRole="RiskProbabilities" />
+          <NavigationProperty Name="RiskProbabilities1" Relationship="RiskManagementModel.FK_UserRisks_RiskProbabilities1" FromRole="UserRisks" ToRole="RiskProbabilities" />
+          <NavigationProperty Name="Risks" Relationship="RiskManagementModel.FK_UserRisks_Risks" FromRole="UserRisks" ToRole="Risks" />
+          <NavigationProperty Name="Users" Relationship="RiskManagementModel.FK_UserRisks_Users" FromRole="UserRisks" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="RiskManagementModel.FK_UserRisks_Users1" FromRole="UserRisks" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_UserRisks_RiskIntensities">
+          <End Type="RiskManagementModel.RiskIntensities" Role="RiskIntensities" Multiplicity="1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskIntensityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskIntensities1">
+          <End Type="RiskManagementModel.RiskIntensities" Role="RiskIntensities" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskIntensities">
+              <PropertyRef Name="RiskIntensityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskIntensityID_AfterCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskProbabilities">
+          <End Type="RiskManagementModel.RiskProbabilities" Role="RiskProbabilities" Multiplicity="1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_RiskProbabilities1">
+          <End Type="RiskManagementModel.RiskProbabilities" Role="RiskProbabilities" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RiskProbabilities">
+              <PropertyRef Name="RiskProbabilityID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskProbabilityID_AfterCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Risks">
+          <End Type="RiskManagementModel.Risks" Role="Risks" Multiplicity="1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Risks">
+              <PropertyRef Name="RiskID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="RiskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Users">
+          <End Type="RiskManagementModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="UserID_Company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRisks_Users1">
+          <End Type="RiskManagementModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="RiskManagementModel.UserRisks" Role="UserRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserRisks">
+              <PropertyRef Name="UserID_Sup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RiskManagementModelStoreContainer" CdmEntityContainer="RiskManagementEntities">
+          <EntitySetMapping Name="Acts"><EntityTypeMapping TypeName="RiskManagementModel.Acts"><MappingFragment StoreEntitySet="Acts">
+            <ScalarProperty Name="IsAcceptedByAdmin" ColumnName="IsAcceptedByAdmin" />
+                <ScalarProperty Name="ActID" ColumnName="ActID" />
+            <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+            <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+            <ScalarProperty Name="ActTitle" ColumnName="ActTitle" />
+            <ScalarProperty Name="ProtectionEQP" ColumnName="ProtectionEQP" />
+            <ScalarProperty Name="Curses" ColumnName="Curses" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ControlingWorks"><EntityTypeMapping TypeName="RiskManagementModel.ControlingWorks"><MappingFragment StoreEntitySet="ControlingWorks">
+            <ScalarProperty Name="IsAcceptedByAdmin" ColumnName="IsAcceptedByAdmin" />
+                <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+            <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+            <ScalarProperty Name="ControlTitle" ColumnName="ControlTitle" />
+            <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OperationGroups"><EntityTypeMapping TypeName="RiskManagementModel.OperationGroups"><MappingFragment StoreEntitySet="OperationGroups">
+            <ScalarProperty Name="OperationGroupName" ColumnName="OperationGroupName" />
+                <ScalarProperty Name="OperationGroupID" ColumnName="OperationGroupID" />
+            <ScalarProperty Name="OperationGroupTitle" ColumnName="OperationGroupTitle" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Operations"><EntityTypeMapping TypeName="RiskManagementModel.Operations"><MappingFragment StoreEntitySet="Operations">
+            <ScalarProperty Name="IsAcceptedByAdmin" ColumnName="IsAcceptedByAdmin" />
+                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+            <ScalarProperty Name="OperationGroupID" ColumnName="OperationGroupID" />
+            <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+            <ScalarProperty Name="OperationTitle" ColumnName="OperationTitle" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RiskDesicions"><EntityTypeMapping TypeName="RiskManagementModel.RiskDesicions"><MappingFragment StoreEntitySet="RiskDesicions">
+            <ScalarProperty Name="RiskDesicionID" ColumnName="RiskDesicionID" />
+            <ScalarProperty Name="StartRiskEvaluationID" ColumnName="StartRiskEvaluationID" />
+            <ScalarProperty Name="EndRiskEvaluationID" ColumnName="EndRiskEvaluationID" />
+            <ScalarProperty Name="RiskDesicionTitle" ColumnName="RiskDesicionTitle" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RiskEvaluations"><EntityTypeMapping TypeName="RiskManagementModel.RiskEvaluations"><MappingFragment StoreEntitySet="RiskEvaluations">
+            <ScalarProperty Name="RiskEvaluationID" ColumnName="RiskEvaluationID" />
+            <ScalarProperty Name="RiskIntensityID" ColumnName="RiskIntensityID" />
+            <ScalarProperty Name="RiskProbabilityID" ColumnName="RiskProbabilityID" />
+            <ScalarProperty Name="RiskEvaluationNumber" ColumnName="RiskEvaluationNumber" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RiskIntensities"><EntityTypeMapping TypeName="RiskManagementModel.RiskIntensities"><MappingFragment StoreEntitySet="RiskIntensities">
+            <ScalarProperty Name="RiskIntensityID" ColumnName="RiskIntensityID" />
+            <ScalarProperty Name="RiskIntensityTitle" ColumnName="RiskIntensityTitle" />
+            <ScalarProperty Name="RiskIntensityLevel" ColumnName="RiskIntensityLevel" />
+            <ScalarProperty Name="RiskIntensityDef" ColumnName="RiskIntensityDef" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RiskProbabilities"><EntityTypeMapping TypeName="RiskManagementModel.RiskProbabilities"><MappingFragment StoreEntitySet="RiskProbabilities">
+            <ScalarProperty Name="RiskProbabilityID" ColumnName="RiskProbabilityID" />
+            <ScalarProperty Name="RiskProbabilityTitle" ColumnName="RiskProbabilityTitle" />
+            <ScalarProperty Name="RiskProbabilityLevel" ColumnName="RiskProbabilityLevel" />
+            <ScalarProperty Name="RiskProbabilityDes" ColumnName="RiskProbabilityDes" />
+            <ScalarProperty Name="RiskProbabilitySpeed" ColumnName="RiskProbabilitySpeed" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="RiskManagementModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleTitle" ColumnName="RoleTitle" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Risks">
+            <EntityTypeMapping TypeName="RiskManagementModel.Risks">
+              <MappingFragment StoreEntitySet="Risks">
+                <ScalarProperty Name="IsAcceptedByAdmin" ColumnName="IsAcceptedByAdmin" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="RiskProbabilityID" ColumnName="RiskProbabilityID" />
+                <ScalarProperty Name="RiskIntensityID" ColumnName="RiskIntensityID" />
+                <ScalarProperty Name="IsNormal" ColumnName="IsNormal" />
+                <ScalarProperty Name="RiskTitle" ColumnName="RiskTitle" />
+                <ScalarProperty Name="StageID" ColumnName="StageID" />
+                <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileGroups">
+            <EntityTypeMapping TypeName="RiskManagementModel.FileGroups">
+              <MappingFragment StoreEntitySet="FileGroups">
+                <ScalarProperty Name="FileGroupTitle" ColumnName="FileGroupTitle" />
+                <ScalarProperty Name="FileGroupID" ColumnName="FileGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="RiskManagementModel.Files">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="RGName" ColumnName="RGName" />
+                <ScalarProperty Name="GUName" ColumnName="GUName" />
+                <ScalarProperty Name="CHName" ColumnName="CHName" />
+                <ScalarProperty Name="FileGroupID" ColumnName="FileGroupID" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stages">
+            <EntityTypeMapping TypeName="RiskManagementModel.Stages">
+              <MappingFragment StoreEntitySet="Stages">
+                <ScalarProperty Name="IsAcceptedByAdmin" ColumnName="IsAcceptedByAdmin" />
+                <ScalarProperty Name="StageTitle" ColumnName="StageTitle" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="ActID" ColumnName="ActID" />
+                <ScalarProperty Name="StageID" ColumnName="StageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="RiskManagementModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="fk_CompanyUserID" ColumnName="fk_CompanyUserID" />
+                <ScalarProperty Name="CompanyPosition" ColumnName="CompanyPosition" />
+                <ScalarProperty Name="CompanyProjectName" ColumnName="CompanyProjectName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRisks">
+            <EntityTypeMapping TypeName="RiskManagementModel.UserRisks">
+              <MappingFragment StoreEntitySet="UserRisks">
+                <ScalarProperty Name="IsNotAvailable" ColumnName="IsNotAvailable" />
+                <ScalarProperty Name="UserID_Sup" ColumnName="UserID_Sup" />
+                <ScalarProperty Name="IsCheckByAdmin" ColumnName="IsCheckByAdmin" />
+                <ScalarProperty Name="IsCheckBySup" ColumnName="IsCheckBySup" />
+                <ScalarProperty Name="RiskProbabilityID_AfterCO" ColumnName="RiskProbabilityID_AfterCO" />
+                <ScalarProperty Name="RiskIntensityID_AfterCO" ColumnName="RiskIntensityID_AfterCO" />
+                <ScalarProperty Name="RiskProbabilityID" ColumnName="RiskProbabilityID" />
+                <ScalarProperty Name="RiskIntensityID" ColumnName="RiskIntensityID" />
+                <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+                <ScalarProperty Name="UserID_Company" ColumnName="UserID_Company" />
+                <ScalarProperty Name="UserRiskID" ColumnName="UserRiskID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="RiskModel" ZoomLevel="60">
+        <EntityTypeShape EntityType="RiskManagementModel.Acts" Width="1.5" PointX="6.625" PointY="12.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.ControlingWorks" Width="1.75" PointX="8.5" PointY="4.5" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.OperationGroups" Width="1.5" PointX="0.5" PointY="10.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.Operations" Width="1.5" PointX="3.875" PointY="11.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.RiskDesicions" Width="1.5" PointX="5.25" PointY="8.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.RiskEvaluations" Width="1.5" PointX="3.75" PointY="3.625" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.RiskIntensities" Width="1.5" PointX="0.75" PointY="5.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiskManagementModel.RiskProbabilities" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166674" IsExpanded="true" />
+        <AssociationConnector Association="RiskManagementModel.FK_Acts_Operations" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.375" PointY="12.994944661458334" />
+          <ConnectorPoint PointX="6.625" PointY="12.994944661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_Operations_OperationGroups" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.1081356846613943" PointY="10.750000000000002" />
+          <ConnectorPoint PointX="1.1081356846613943" PointY="10.5" />
+          <ConnectorPoint PointX="2.25" PointY="10.5" />
+          <ConnectorPoint PointX="2.25" PointY="12.4612939453125" />
+          <ConnectorPoint PointX="3.875" PointY="12.4612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_RiskDesicion_RiskEvaluations" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.46875" PointY="6.1821907552083317" />
+          <ConnectorPoint PointX="4.46875" PointY="9.9612939453125" />
+          <ConnectorPoint PointX="5.25" PointY="9.9612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_RiskDesicion_RiskEvaluations1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.8593775" PointY="6.1821907552083317" />
+          <ConnectorPoint PointX="4.8593775" PointY="9.3868944726562482" />
+          <ConnectorPoint PointX="5.25" PointY="9.3868944726562482" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_RiskEvaluations_RiskIntensities" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.6535953776041659" />
+          <ConnectorPoint PointX="3.75" PointY="5.6535953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_RiskEvaluations_RiskProbabilities" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.51153500195386" />
+          <ConnectorPoint PointX="4.5" PointY="1.51153500195386" />
+          <ConnectorPoint PointX="4.5" PointY="3.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RiskManagementModel.Roles" Width="1.5" PointX="10.375" PointY="8.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="RiskManagementModel.Risks" Width="1.5" PointX="11.25" PointY="3.875" Height="3.326396484374996" />
+        <AssociationConnector Association="RiskManagementModel.FK_ControlingWorks_Risks" >
+          <ConnectorPoint PointX="11.25" PointY="5.5862939453125" />
+          <ConnectorPoint PointX="10.25" PointY="5.5862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_Risks_RiskIntensities" >
+          <ConnectorPoint PointX="2.25" PointY="7.0643929036458326" />
+          <ConnectorPoint PointX="4.385416666666667" PointY="7.0643929036458317" />
+          <ConnectorPoint PointX="4.552083333333333" PointY="7.0643929036458326" />
+          <ConnectorPoint PointX="4.7760441666666669" PointY="7.0643929036458317" />
+          <ConnectorPoint PointX="4.9427108333333329" PointY="7.0643929036458326" />
+          <ConnectorPoint PointX="11.25" PointY="7.0643929036458326" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_Risks_RiskProbabilities" >
+          <ConnectorPoint PointX="2.25" PointY="2.5367660947269304" />
+          <ConnectorPoint PointX="4.416666666666667" PointY="2.53676609472693" />
+          <ConnectorPoint PointX="4.583333333333333" PointY="2.5367660947269304" />
+          <ConnectorPoint PointX="12" PointY="2.5367660947269304" />
+          <ConnectorPoint PointX="12" PointY="3.875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RiskManagementModel.FileGroups" Width="1.5" PointX="15.625" PointY="3.625" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="RiskManagementModel.Files" Width="1.5" PointX="17.875" PointY="3.375" Height="2.1725878906250031" />
+        <AssociationConnector Association="RiskManagementModel.FK_Files_FileGroups" >
+          <ConnectorPoint PointX="17.125" PointY="4.422841796875" />
+          <ConnectorPoint PointX="17.875" PointY="4.422841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RiskManagementModel.Stages" Width="1.5" PointX="8.875" PointY="12.5" Height="2.3648893229166674" />
+        <AssociationConnector Association="RiskManagementModel.FK_Stages_Acts" >
+          <ConnectorPoint PointX="8.125" PointY="13.682444661458334" />
+          <ConnectorPoint PointX="8.875" PointY="13.682444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_Risks_Stages" >
+          <ConnectorPoint PointX="10.375" PointY="13.766297200520834" />
+          <ConnectorPoint PointX="12.25" PointY="13.766297200520834" />
+          <ConnectorPoint PointX="12.25" PointY="7.3936979166666656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RiskManagementModel.Users" Width="1.5" PointX="12.625" PointY="8.125" Height="4.480205078124996" />
+        <AssociationConnector Association="RiskManagementModel.FK_Users_Roles" >
+          <ConnectorPoint PointX="11.875" PointY="9.3939925130208337" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="9.3939925130208337" />
+          <ConnectorPoint PointX="12.333333333333334" PointY="9.3939925130208337" />
+          <ConnectorPoint PointX="12.625" PointY="9.3939925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_Users_Users" >
+          <ConnectorPoint PointX="13.156923076923077" PointY="12.605205078125" />
+          <ConnectorPoint PointX="13.156923076923077" PointY="12.855205078125" />
+          <ConnectorPoint PointX="13.603461538461538" PointY="12.855205078125" />
+          <ConnectorPoint PointX="13.603461538461538" PointY="12.605205078125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RiskManagementModel.UserRisks" Width="1.5" PointX="14.875" PointY="6.375" Height="4.4802050781250031" />
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_RiskIntensities" >
+          <ConnectorPoint PointX="2.25" PointY="7.5691943359374987" />
+          <ConnectorPoint PointX="4.385416666666667" PointY="7.5691943359374978" />
+          <ConnectorPoint PointX="4.552083333333333" PointY="7.5691943359374987" />
+          <ConnectorPoint PointX="4.7760441666666669" PointY="7.5691943359374978" />
+          <ConnectorPoint PointX="4.9427108333333329" PointY="7.5691943359374987" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="7.5691943359374978" />
+          <ConnectorPoint PointX="12.333333333333334" PointY="7.5691943359374987" />
+          <ConnectorPoint PointX="14.875" PointY="7.5691943359374987" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_RiskIntensities1" >
+          <ConnectorPoint PointX="1.5" PointY="7.6821907552083326" />
+          <ConnectorPoint PointX="1.5" PointY="7.875" />
+          <ConnectorPoint PointX="4.385416666666667" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="4.552083333333333" PointY="7.875" />
+          <ConnectorPoint PointX="4.7760441666666669" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="4.9427108333333329" PointY="7.875" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="12.333333333333334" PointY="7.875" />
+          <ConnectorPoint PointX="14.5" PointY="7.875" />
+          <ConnectorPoint PointX="14.5" PointY="9.2434517070312445" />
+          <ConnectorPoint PointX="14.875" PointY="9.2434517070312445" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_RiskProbabilities" >
+          <ConnectorPoint PointX="2.25" PointY="3.0493816411134658" />
+          <ConnectorPoint PointX="4.416666666666667" PointY="3.0493816411134653" />
+          <ConnectorPoint PointX="4.583333333333333" PointY="3.0493816411134658" />
+          <ConnectorPoint PointX="11.916666666666666" PointY="3.0493816411134653" />
+          <ConnectorPoint PointX="12.083333333333334" PointY="3.0493816411134658" />
+          <ConnectorPoint PointX="14.932289166666665" PointY="3.0493816411134653" />
+          <ConnectorPoint PointX="15.098955833333333" PointY="3.0493816411134658" />
+          <ConnectorPoint PointX="15.21875" PointY="3.0493816411134658" />
+          <ConnectorPoint PointX="15.21875" PointY="6.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_RiskProbabilities1" >
+          <ConnectorPoint PointX="2.25" PointY="2.024150548340395" />
+          <ConnectorPoint PointX="4.416666666666667" PointY="2.0241505483403945" />
+          <ConnectorPoint PointX="4.583333333333333" PointY="2.024150548340395" />
+          <ConnectorPoint PointX="15.0156225" PointY="2.024150548340395" />
+          <ConnectorPoint PointX="15.0156225" PointY="6.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_Risks" >
+          <ConnectorPoint PointX="12.75" PointY="6.8843489583333328" />
+          <ConnectorPoint PointX="14.875" PointY="6.8843489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_Users" >
+          <ConnectorPoint PointX="14.125" PointY="10.111828392578124" />
+          <ConnectorPoint PointX="14.875" PointY="10.111828392578124" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiskManagementModel.FK_UserRisks_Users1" >
+          <ConnectorPoint PointX="14.125" PointY="8.6217258535156223" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="8.6217258535156223" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="8.6217258535156223" />
+          <ConnectorPoint PointX="14.875" PointY="8.6217258535156223" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

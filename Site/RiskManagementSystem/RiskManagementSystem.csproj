@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF40547D-9CA3-4A77-BA9A-05F7E82B0C5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RiskManagementSystem</RootNamespace>
+    <AssemblyName>RiskManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BotDetect, Version=4.3.2.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.3.2\lib\net40\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.3.2.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.3.2\lib\net40\BotDetect.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\ActSetting.aspx" />
+    <Content Include="Admin\AdvanceSearch.aspx" />
+    <Content Include="Admin\ControllSetting.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\EducationSetting.aspx" />
+    <Content Include="Admin\LoginLogsReport.aspx" />
+    <Content Include="Admin\MessageCreate.aspx" />
+    <Content Include="Admin\RiskControl.aspx" />
+    <Content Include="Admin\UserCreate.aspx" />
+    <Content Include="Admin\UserEdit.aspx" />
+    <Content Include="Companies\AfterRiskEval.aspx" />
+    <Content Include="Companies\AfterRiskEvalDetail.aspx" />
+    <Content Include="Companies\MessageSetting.aspx" />
+    <Content Include="Companies\RiskDescription.aspx" />
+    <Content Include="Companies\RiskDetailHistory.aspx" />
+    <Content Include="Companies\RiskHistory.aspx" />
+    <Content Include="Css\LoginStyle\Style.css" />
+    <Content Include="default.aspx" />
+    <Content Include="ExcelTest.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Admin\MessageSetting.aspx" />
+    <Content Include="Admin\OperationGroupSetting.aspx" />
+    <Content Include="Admin\OperationSetting.aspx" />
+    <Content Include="Admin\RiskSetting.aspx" />
+    <Content Include="Admin\RiskView.aspx" />
+    <Content Include="Admin\StageSetting.aspx" />
+    <Content Include="Admin\SupervisorSetting.aspx" />
+    <Content Include="Admin\UploadFiles.aspx" />
+    <Content Include="Admin\UserSetting.aspx" />
+    <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="Admin\WebFormcontrol.aspx" />
+    <Content Include="Admin\WebFormOperation.aspx" />
+    <Content Include="Admin\WebFormStage.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Companies\Default.aspx" />
+    <Content Include="Companies\DlFiles.aspx" />
+    <Content Include="Companies\EditInfo.aspx" />
+    <Content Include="Companies\RecoverPassword.aspx" />
+    <Content Include="Companies\RiskEval.aspx" />
+    <Content Include="Companies\ViewRiskControl.aspx" />
+    <Content Include="Controls\RecoverPass.ascx" />
+    <Content Include="Controls\UCLogin.ascx" />
+    <Content Include="Css\AdminStyle\admin-font-awesome.css" />
+    <Content Include="Css\AdminStyle\admin-font-awesome.min.css" />
+    <Content Include="Css\AdminStyle\AdminStyle.css" />
+    <Content Include="Css\AdminStyle\app.v2.css" />
+    <Content Include="Css\AdminStyle\app.v2.min.css" />
+    <Content Include="Css\AdminStyle\bootstrap.css" />
+    <Content Include="Css\AdminStyle\bootstrap.min.css" />
+    <Content Include="Css\reset.css" />
+    <Content Include="Css\Style.css" />
+    <Content Include="_Default.aspx" />
+    <Content Include="fonts\Flaticon.svg" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\avatar_default.jpg" />
+    <Content Include="Images\behl.png" />
+    <Content Include="Images\behLogo.png" />
+    <Content Include="Images\bodybg.jpg" />
+    <Content Include="Images\CFS.png" />
+    <Content Include="Images\changepassIcon.png" />
+    <Content Include="Images\footer.jpg" />
+    <Content Include="Images\gasl.png" />
+    <Content Include="Images\gaslogo.png" />
+    <Content Include="Images\header-bg.jpg" />
+    <Content Include="Images\hselogo.png" />
+    <Content Include="Images\jbg.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\LogoutIcon.png" />
+    <Content Include="Images\OperaionIcon.png" />
+    <Content Include="Images\ProjectIcon.png" />
+    <Content Include="Images\riskbg.jpg" />
+    <Content Include="Images\risklogo.png" />
+    <Content Include="Images\SearchIcon.png" />
+    <Content Include="Images\Supervisor.png" />
+    <Content Include="Images\tobg.jpg" />
+    <Content Include="Images\UM.png" />
+    <Content Include="Images\UploadIcon.png" />
+    <Content Include="js\AdminScripts\app.v2.js" />
+    <Content Include="js\AdminScripts\app.v2.min.js" />
+    <Content Include="js\AdminScripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="js\AdminScripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="js\AdminScripts\landing.js" />
+    <Content Include="js\AdminScripts\landing.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="fonts\Flaticon.eot" />
+    <Content Include="fonts\Flaticon.ttf" />
+    <Content Include="fonts\Flaticon.woff" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontAwesome\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\IranSans\IRANSansWebFaNum.eot" />
+    <Content Include="fonts\IranSans\IRANSansWebFaNum.ttf" />
+    <Content Include="fonts\IranSans\IRANSansWebFaNum.woff" />
+    <Content Include="fonts\IranSans\IRANSansWebFaNum.woff2" />
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="Companies\CompanyMaster.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="SUP\Default.aspx" />
+    <Content Include="SUP\DlFiles.aspx" />
+    <Content Include="SUP\MessageSetting.aspx" />
+    <Content Include="SUP\RecoverPass.aspx" />
+    <Content Include="SUP\RiskConfirm.aspx" />
+    <Content Include="SUP\RiskDetailHistory.aspx" />
+    <Content Include="SUP\RiskDetailView.aspx" />
+    <Content Include="SUP\RiskHistory.aspx" />
+    <Content Include="SUP\RiskView.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="SUP\SupervisorMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ActSetting.aspx.cs">
+      <DependentUpon>ActSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ActSetting.aspx.designer.cs">
+      <DependentUpon>ActSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdvanceSearch.aspx.cs">
+      <DependentUpon>AdvanceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdvanceSearch.aspx.designer.cs">
+      <DependentUpon>AdvanceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ControllSetting.aspx.cs">
+      <DependentUpon>ControllSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ControllSetting.aspx.designer.cs">
+      <DependentUpon>ControllSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EducationSetting.aspx.cs">
+      <DependentUpon>EducationSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EducationSetting.aspx.designer.cs">
+      <DependentUpon>EducationSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginLogsReport.aspx.cs">
+      <DependentUpon>LoginLogsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginLogsReport.aspx.designer.cs">
+      <DependentUpon>LoginLogsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MessageCreate.aspx.cs">
+      <DependentUpon>MessageCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MessageCreate.aspx.designer.cs">
+      <DependentUpon>MessageCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RiskControl.aspx.cs">
+      <DependentUpon>RiskControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RiskControl.aspx.designer.cs">
+      <DependentUpon>RiskControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserCreate.aspx.cs">
+      <DependentUpon>UserCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserCreate.aspx.designer.cs">
+      <DependentUpon>UserCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\AfterRiskEval.aspx.cs">
+      <DependentUpon>AfterRiskEval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\AfterRiskEval.aspx.designer.cs">
+      <DependentUpon>AfterRiskEval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\AfterRiskEvalDetail.aspx.cs">
+      <DependentUpon>AfterRiskEvalDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\AfterRiskEvalDetail.aspx.designer.cs">
+      <DependentUpon>AfterRiskEvalDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\MessageSetting.aspx.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\MessageSetting.aspx.designer.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\RiskDescription.aspx.cs">
+      <DependentUpon>RiskDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\RiskDescription.aspx.designer.cs">
+      <DependentUpon>RiskDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\RiskDetailHistory.aspx.cs">
+      <DependentUpon>RiskDetailHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\RiskDetailHistory.aspx.designer.cs">
+      <DependentUpon>RiskDetailHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\RiskHistory.aspx.cs">
+      <DependentUpon>RiskHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\RiskHistory.aspx.designer.cs">
+      <DependentUpon>RiskHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelTest.aspx.cs">
+      <DependentUpon>ExcelTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcelTest.aspx.designer.cs">
+      <DependentUpon>ExcelTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MessageSetting.aspx.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MessageSetting.aspx.designer.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OperationGroupSetting.aspx.cs">
+      <DependentUpon>OperationGroupSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OperationGroupSetting.aspx.designer.cs">
+      <DependentUpon>OperationGroupSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OperationSetting.aspx.cs">
+      <DependentUpon>OperationSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OperationSetting.aspx.designer.cs">
+      <DependentUpon>OperationSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RiskSetting.aspx.cs">
+      <DependentUpon>RiskSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RiskSetting.aspx.designer.cs">
+      <DependentUpon>RiskSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RiskView.aspx.cs">
+      <DependentUpon>RiskView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RiskView.aspx.designer.cs">
+      <DependentUpon>RiskView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StageSetting.aspx.cs">
+      <DependentUpon>StageSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StageSetting.aspx.designer.cs">
+      <DependentUpon>StageSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SupervisorSetting.aspx.cs">
+      <DependentUpon>SupervisorSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SupervisorSetting.aspx.designer.cs">
+      <DependentUpon>SupervisorSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadFiles.aspx.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadFiles.aspx.designer.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserSetting.aspx.cs">
+      <DependentUpon>UserSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserSetting.aspx.designer.cs">
+      <DependentUpon>UserSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebFormcontrol.aspx.cs">
+      <DependentUpon>WebFormcontrol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebFormcontrol.aspx.designer.cs">
+      <DependentUpon>WebFormcontrol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebFormOperation.aspx.cs">
+      <DependentUpon>WebFormOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebFormOperation.aspx.designer.cs">
+      <DependentUpon>WebFormOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebFormStage.aspx.cs">
+      <DependentUpon>WebFormStage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebFormStage.aspx.designer.cs">
+      <DependentUpon>WebFormStage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\DataContext.cs" />
+    <Compile Include="Classes\eShopRoleProvider.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Images.cs" />
+    <Compile Include="Classes\PersianCulture.cs" />
+    <Compile Include="Companies\CompanyMaster.Master.cs">
+      <DependentUpon>CompanyMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\CompanyMaster.Master.designer.cs">
+      <DependentUpon>CompanyMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\DlFiles.aspx.cs">
+      <DependentUpon>DlFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\DlFiles.aspx.designer.cs">
+      <DependentUpon>DlFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\EditInfo.aspx.cs">
+      <DependentUpon>EditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\EditInfo.aspx.designer.cs">
+      <DependentUpon>EditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\RiskEval.aspx.cs">
+      <DependentUpon>RiskEval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\RiskEval.aspx.designer.cs">
+      <DependentUpon>RiskEval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Companies\ViewRiskControl.aspx.cs">
+      <DependentUpon>ViewRiskControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Companies\ViewRiskControl.aspx.designer.cs">
+      <DependentUpon>ViewRiskControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecoverPass.ascx.cs">
+      <DependentUpon>RecoverPass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\RecoverPass.ascx.designer.cs">
+      <DependentUpon>RecoverPass.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLogin.ascx.cs">
+      <DependentUpon>UCLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLogin.ascx.designer.cs">
+      <DependentUpon>UCLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_Default.aspx.cs">
+      <DependentUpon>_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Default.aspx.designer.cs">
+      <DependentUpon>_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RiskModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SUP\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\DlFiles.aspx.cs">
+      <DependentUpon>DlFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\DlFiles.aspx.designer.cs">
+      <DependentUpon>DlFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\MessageSetting.aspx.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\MessageSetting.aspx.designer.cs">
+      <DependentUpon>MessageSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RecoverPass.aspx.cs">
+      <DependentUpon>RecoverPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RecoverPass.aspx.designer.cs">
+      <DependentUpon>RecoverPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RiskConfirm.aspx.cs">
+      <DependentUpon>RiskConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RiskConfirm.aspx.designer.cs">
+      <DependentUpon>RiskConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RiskDetailHistory.aspx.cs">
+      <DependentUpon>RiskDetailHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RiskDetailHistory.aspx.designer.cs">
+      <DependentUpon>RiskDetailHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RiskDetailView.aspx.cs">
+      <DependentUpon>RiskDetailView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RiskDetailView.aspx.designer.cs">
+      <DependentUpon>RiskDetailView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RiskHistory.aspx.cs">
+      <DependentUpon>RiskHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RiskHistory.aspx.designer.cs">
+      <DependentUpon>RiskHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\RiskView.aspx.cs">
+      <DependentUpon>RiskView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\RiskView.aspx.designer.cs">
+      <DependentUpon>RiskView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUP\SupervisorMaster.Master.cs">
+      <DependentUpon>SupervisorMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUP\SupervisorMaster.Master.designer.cs">
+      <DependentUpon>SupervisorMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SupRiskDetailViewModel.cs" />
+    <Compile Include="ViewModels\RiskDetailViewModel.cs" />
+    <Compile Include="ViewModels\SupRiskHistoryViewModel.cs" />
+    <Compile Include="ViewModels\RiskHistoryViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\RiskModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RiskModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Companies\Web.config" />
+    <None Include="Css\Fonts\BElham.eot" />
+    <None Include="Css\Fonts\BElham.ttf" />
+    <None Include="Css\Fonts\BElham.woff" />
+    <Content Include="SUP\Web.config" />
+    <None Include="Css\Fonts\BTitrBold.eot" />
+    <None Include="Css\Fonts\BTitrBold.ttf" />
+    <None Include="Css\Fonts\BTitrBold.woff" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\Checklists\" />
+    <Folder Include="Files\guideline\" />
+    <Folder Include="Files\regular\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59628</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

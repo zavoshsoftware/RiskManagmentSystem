@@ -1,0 +1,74 @@
+﻿body {
+}
+
+
+.html-hidden {
+    display: none;
+}
+.navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-brand img {
+    max-height: 54px;
+}
+
+#successDiv, #dangerDiv {
+    display: none;
+}
+
+
+.left {
+    float: right;
+    padding-right: 4px;
+}
+
+.right2 {
+    float: right;
+    text-align: left;
+    width: 151px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.fieldGroup {
+    margin: 00px 20px 0 0;
+    padding: 0;
+    color: #333333;
+    padding-top: 20px;
+}
+
+.fieldGroupforMultilineTextbox {
+    min-height: 100px;
+    margin: 20px 20px 0 0;
+    padding: 0;
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+div#butonDiv {
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.dropdown-menu .panel-heading, .dropdown-menu .list-group a {
+    text-align: right;
+    direction: rtl;
+}
+.multi-min-height{
+    min-height:55px;
+}
+.fieldGroup label
+{
+    padding-right:5px;
+}
+.danger-lbl{
+    font-size:20px;
+    text-align:center;
+}
+.panel-heading-success {
+    background-color: #1C5E55 !important;
+    border-color: #1C5E55;
+    margin:0 10px;
+}

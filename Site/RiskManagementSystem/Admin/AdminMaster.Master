@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="RiskManagementSystem.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="/js/jquery.js"></script>
+    <link href="/Css/AdminStyle/app.v2.css" rel="stylesheet" />
+    <script src="/js/AdminScripts/app.v2.min.js"></script>
+    <link href="/Css/AdminStyle/admin-font-awesome.css" rel="stylesheet" />
+    <link href="/Css/AdminStyle/AdminStyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body class="k-rtl">
+    <section class="vbox">
+        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+            <div class="navbar-header aside-md">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"><i class="fa fa-bars"></i></a><a href="/" class="navbar-brand">
+                    <img src="/images/logo.png" class="m-r-sm">
+                </a><a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user"><i class="fa fa-cog"></i></a>
+            </div>
+            <ul class="nav navbar-nav hidden-xs"></ul>
+            <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
+                <li class="hidden-xs">
+                    <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+                        <i class="fa fa-bell"></i><span class="badge badge-sm up bg-danger m-l-n-sm count">
+                            0
+                        </span>
+                    </a>
+                    <section class="dropdown-menu aside-xl">
+                        <section class="panel bg-white">
+                            <header class="panel-heading b-light bg-light">
+                                <strong>
+                                    شما <span class="count">
+
+                                    </span> اعلان دارید
+                                </strong>
+                            </header>
+
+                            <footer class="panel-footer text-sm"></footer>
+                        </section>
+                    </section>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left">
+                            <img src="/images/avatar_default.jpg" />
+                        </span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <span class="arrow top"></span>
+                        <li><a href="#">پروفایل</a> </li>
+                        <li><a href="#">Help</a> </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/LogOut.aspx">خروج</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-dark lter aside-md hidden-print nav-xs-right" id="nav" style="width:260px;">
+                    <section class="vbox">
+
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+                                <!-- nav -->
+                                <nav class="nav-primary hidden-xs">
+                                    <ul class="nav">
+                                        <li id="userLi" class="menuitem"><a href="/Admin/UserSetting.aspx"><i class="fa fa-users icon"><b class="bg-success"></b></i><span>مدیریت کاربران</span></a></li>
+                                        <li id="controlLi" class="menuitem"><a href="/Admin/RiskControl.aspx"><i class="fa fa-calculator icon"><b class="bg-danger"></b></i><span>مدیریت ریسک ها</span></a></li>
+<%--                                        <li id="supLi" class="menuitem"><a href="/Admin/SupervisorSetting.aspx"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت ناظران</span></a></li>--%>
+                                        <li id="OpGroupLi" class="menuitem"><a href="/Admin/OperationGroupSetting.aspx"><i class="fa fa-paperclip icon"><b class="bg-info"></b></i><span>مدیریت پروژه ها</span></a></li>
+                                        <li id="OpLi" class="menuitem"><a href="/Admin/OperationSetting.aspx"><i class="fa fa-paper-plane icon"><b class="bg-warning"></b></i><span>مدیریت عملیات ها</span></a></li>
+                                        
+                                        <li id="supCheckLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-mail-reply icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مشاهده سطح ریسک ها</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/Admin/RiskView.aspx?ID=0">
+                                                        <i class="fa fa-angle-left"></i><span>بررسی نشده توسط ناظر</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/Admin/RiskView.aspx?ID=1">
+                                                        <i class="fa fa-angle-left"></i><span>بررسی شده توسط ناظر</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        
+                                        
+                                        
+                                       <%-- <li id="notCheckLi" class="menuitem"><a href="/Admin/RiskView.aspx?ID=0"><i class="fa fa-users icon"><b class="bg-primary"></b></i><span>مشاهده سطح ریسک های بررسی نشده توسط ناظر</span></a></li>
+                                        <li id="checkLi" class="menuitem"><a href="/Admin/RiskView.aspx?ID=1"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مشاهده سطح ریسک های بررسی شده توسط ناظر</span></a></li>--%>
+                                        <li id="uploadLi" class="menuitem"><a href="/Admin/UploadFiles.aspx"><i class="fa fa-upload icon"><b class="bg-danger"></b></i><span>آپلود فایل ها</span></a></li>
+                                        <li id="searchLi" class="menuitem"><a href="/Admin/AdvanceSearch.aspx"><i class="fa fa-search icon"><b class="bg-black"></b></i><span>جست و جو</span></a></li>
+                                        <li id="loginreportLi" class="menuitem"><a href="/Admin/LoginLogsReport.aspx"><i class="fa fa-sign-in icon"><b class="bg-warning"></b></i><span>گزارش ورود کاربران به سامانه</span></a></li>
+                                        <li id="messageLi" class="menuitem"><a href="/Admin/MessageSetting.aspx"><i class="fa fa-envelope icon"><b class="bg-primary"></b></i><span>مدیریت پیام های ارسالی</span></a></li>
+                                    </ul>
+                                </nav>
+                                <!-- / nav -->
+                            </div>
+                        </section>
+
+                    </section>
+                </aside>
+                <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <section class="scrollable padder" style="margin-top: 5px;">
+                            <form id="form1" runat="server">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+                                </form>
+                        </section>
+                    </section>
+                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+                </section>
+            </section>
+        </section>
+    </section>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var URL = window.location.pathname;
+            if (URL.includes('User')) {
+                $('.menuitem').removeClass('active');
+                $('#userLi').addClass('active');
+            }
+
+            else if (URL.includes('/RiskControl')) {
+                $('.menuitem').removeClass('active');
+                $('#controlLi').addClass('active');
+            }
+
+            else if (URL.includes('/OperationGroupSetting')) {
+                $('.menuitem').removeClass('active');
+                $('#OpGroupLi').addClass('active');
+            }
+            else if (URL.includes('/OperationSetting')) {
+                $('.menuitem').removeClass('active');
+                $('#OpLi').addClass('active');
+            }
+            else if (URL.includes('/RiskView')) {
+                $('.menuitem').removeClass('active');
+                $('#supCheckLi').addClass('active');
+            }
+            else if (URL.includes('/UploadFiles')) {
+                $('.menuitem').removeClass('active');
+                $('#uploadLi').addClass('active');
+            }
+            else if (URL.includes('/AdvanceSearch')) {
+                $('.menuitem').removeClass('active');
+                $('#searchLi').addClass('active');
+            }
+            else if (URL.includes('/LoginLogsReport')) {
+                $('.menuitem').removeClass('active');
+                $('#loginreportLi').addClass('active');
+            }
+            else if (URL.includes('/AdvanceSearch')) {
+                $('.menuitem').removeClass('active');
+                $('#searchLi').addClass('active');
+            }
+            else if (URL.includes('/MessageSetting')) {
+                $('.menuitem').removeClass('active');
+                $('#messageLi').addClass('active');
+            }
+        });
+    </script>
+     
+</body>
+</html>
